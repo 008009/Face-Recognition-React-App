@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 
 class Register extends React.Component {
 	constructor(props){
-		super();
+		super(props);
 		this.state = {
 			Email: '',
 			Password: '',
@@ -31,24 +31,20 @@ class Register extends React.Component {
 				password: this.state.Password
 			})
 		})
-		.then(response => response.json())
-		.then(user => {
-			if(user.id){
-				this.props.loadUser(user);
-				this.props.onRouteChange('home');
-			}else{
+      	.then(response => response.json())
+      	.then(user => {
+        	if (user.id) {
+          		this.props.loadUser(user);
+          		this.props.onRouteChange('home');
+          	}else{
 				if(user === 'Invalid Form Submission') {
-					return alert("Please Fill in All Blanks");
+					return alert("Please fill in all blanks");
 				}
 				alert('This email has been registered. Please login directly!');
 			}
 		})
 	}
-	// handleKeyPressed =(event) => {
- //  		if(event.key === 'Enter'){
- //  			console.log('work');
- //  		}
- //  	}
+
 	render(){
 		//const { onRouteChange } = this.props;
 		return (

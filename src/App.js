@@ -139,6 +139,7 @@ const initState = {
     faceNumber:''
   }
 }
+
 class App extends Component {
   constructor(){
     super();

@@ -30,19 +30,15 @@ class Signin extends React.Component {
       		if(user.id){
           		this.props.loadUser(user)
           		this.props.onRouteChange('home');	
-      		}else{
+      		}
+      		else{
       			if(user === 'Invalid Form Submission') {
-					return alert("Please Fill in All Blanks");
+					return alert("Please fill in all blanks");
 				}
       			alert('Either your email or password is wrong!');
       		}
       	})
   	}
-  	// handleKeyPressed =(event) => {
-  	// 	if(event.key === 'Enter'){
-  	// 		console.log('work');
-  	// 	}
-  	// }
 	render() {
 		const { onRouteChange } = this.props;
 		return(
